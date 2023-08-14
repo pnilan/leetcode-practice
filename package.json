@@ -1,0 +1,20 @@
+{
+  "name": "leetcode-practice",
+  "version": "1.0.0",
+  "description": "Collection of LeetCode style problems that I have completed",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Patrick Nilan",
+  "license": "ISC",
+  "dependencies": {
+    "node": "^20.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.47.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.28.0",
+    "jest": "^29.6.2"
+  }
+}
