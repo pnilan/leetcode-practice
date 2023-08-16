@@ -37,13 +37,7 @@ n == image[i].length
 // EDGE CASES:
 //
 // 2. STRATEGY
-// color image[sr][sc]
-//
-// then check right, if valid, invoke floodFill on image[sr][sc + 1]
-// else check down, if valid, invoke floodFill on image[sr + 1][sc]
-// else check left, if valid, invoke floodFill on image[sr][sc - 1]
-// else check up, if valid, invoke floodFille on image[sr - 1][sc]
-//
+// invoke fill function recursively, use closure to update image, return image
 
 const floodFill = (image, sr, sc, color) => {
   if (image[sr][sc] === color) { return image; }
@@ -56,10 +50,10 @@ const floodFill = (image, sr, sc, color) => {
     if (image[sr][sc] !== target) { return; }
 
     image[sr][sc] = color;
-    fill(image, sr + 1, sc, color, target)
-    fill(image, sr, sc + 1, color, target)
-    fill(image, sr - 1, sc, color, target)
-    fill(image, sr, sc - 1, color, target)
+    fill(image, sr + 1, sc, color, target);
+    fill(image, sr, sc + 1, color, target);
+    fill(image, sr - 1, sc, color, target);
+    fill(image, sr, sc - 1, color, target);
   };
 
   fill(image, sr, sc, color, oldColor);
