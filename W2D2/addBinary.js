@@ -105,5 +105,3 @@ const addBinary = (a, b) => {
   }
   return binaryResult.reverse().join('');
 };
-
-console.log(addBinary('101111', '10'), 'should be 110001');
