@@ -39,7 +39,7 @@ const containsDuplicate = (nums) => {
 
   for (var i = 0; i < nums.length; i++) {
     if (counts[nums[i]] === undefined) {
-      countrs[nums[i]] = true;
+      counts[nums[i]] = true;
     } else {
       return true;
     }
