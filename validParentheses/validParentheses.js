@@ -42,7 +42,7 @@ const isValidParentheses = (s) => {
     }
   }
 
-  return true && !stack.length;
+  return !stack.length;
 };
 
 let s = '()';
