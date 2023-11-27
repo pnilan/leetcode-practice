@@ -23,21 +23,56 @@
  * @returns {boolean}
  */
 
+// const isValidPalindrome = (s) => {
+
+//   s = s.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+//   let leftIdx = 0;
+//   let rightIdx = s.length - 1;
+
+//   while (rightIdx > leftIdx) {
+//     if (s[leftIdx] !== s[rightIdx]) {
+//       console.log(leftIdx, rightIdx);
+//       return false;
+//     }
+//     leftIdx++;
+//     rightIdx--;
+//   }
+//   return true;
+// };
+
 const isValidPalindrome = (s) => {
 
-  s = s.toLowerCase().replace(/[^a-z0-9]/g, '');
+  const isAlphaNumeric = (char) => {
+    return ((char.toLowerCase() >= 'a' && char.toLowerCase() <= 'z') || (char >= '0' && char <=
+    '9'));
+  };
 
-  let leftIdx = 0;
-  let rightIdx = s.length - 1;
+  let left = 0;
+  let right = s.length - 1;
 
-  while (rightIdx > leftIdx) {
-    if (s[leftIdx] !== s[rightIdx]) {
-      console.log(leftIdx, rightIdx);
+  while (left < right) {
+    let leftChar = s[left].toLowerCase();
+    let rightChar = s[right].toLowerCase();
+
+    if (!isAlphaNumeric(leftChar)) {
+      left++;
+      continue;
+    }
+
+    if (!isAlphaNumeric(rightChar)) {
+      right--;
+      continue;
+    }
+
+    if (leftChar !== rightChar) {
       return false;
     }
-    leftIdx++;
-    rightIdx--;
+
+    left++;
+    right--;
   }
+
   return true;
 };
 
