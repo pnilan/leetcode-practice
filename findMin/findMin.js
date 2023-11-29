@@ -33,19 +33,30 @@
 
 const findMin = (nums) => {
 
-  let low = nums[0];
-  let high = nums[nums.length - 1];
-  mid = (low + high) >> 1;
+  let low = 0;
+  let high = nums.length - 1;
 
-  while (low > mid || high < mid) {
-    nums.unshift(nums.pop());
-
-    low = nums[0];
-    high = nums[nums.length - 1];
+  while (low < high) {
     mid = (low + high) >> 1;
+    let check = nums[mid];
+
+    let left = nums[low];
+    let right = nums[high];
+
+    if (left < right) {
+      return left;
+    }
+
+    if (left <= check) {
+      low = mid + 1;
+    }
+
+    if (left > check) {
+      high = mid;
+    }
   }
 
-  return low;
+  return nums[low];
 
 };
 
